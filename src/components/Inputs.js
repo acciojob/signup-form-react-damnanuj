@@ -56,18 +56,21 @@ const Inputs = () => {
             <form onSubmit={handleForm}>
                 {error && <p>{error}</p>}
                 <input
+                    data-testid = 'name'
                     type="text"
                     placeholder="Enter Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
+                    data-testid = 'email'
                     type="email"
                     placeholder="Enter Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <select
+                    data-testid = 'gender'
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                 >
@@ -76,18 +79,20 @@ const Inputs = () => {
                     <option value="Other">Other</option>
                 </select>
                 <input
+                    data-testid = 'phoneNumber'
                     type="text"
                     placeholder="Enter Your Phone Number"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                 />
                 <input
+                    data-testid = 'password'
                     type="password"
                     placeholder="Enter Your Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">Submit</button>
+                <button data-testid = 'submit' type="submit">Submit</button>
             </form>
         </div>
     );
