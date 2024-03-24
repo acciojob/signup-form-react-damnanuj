@@ -7,6 +7,7 @@ const Inputs = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [welcomeMessage, setWelcomeMessage] = useState("");
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -48,11 +49,14 @@ const Inputs = () => {
         // Reset error
         setError("");
 
-        alert(`Hello ${username}`);
+        setWelcomeMessage(`Hello ${username}`);
     };
 
     return (
         <div>
+            {
+                !welcomeMessage && (
+            
             <form onSubmit={handleForm}>
                 {error && <p>{error}</p>}
                 <input
@@ -94,6 +98,9 @@ const Inputs = () => {
                 />
                 <button data-testid = 'submit' type="submit">Submit</button>
             </form>
+                )
+            }
+            {welcomeMessage && <h1>{welcomeMessage}</h1>}
         </div>
     );
 };
